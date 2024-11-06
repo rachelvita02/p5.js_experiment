@@ -9,19 +9,19 @@ let paths = [];
 // Are we painting?
 let painting = false;
 // How long until the next circle
-let next = 0;
+let next = 20;
 // Where are we now and where were we?
 let current;
 let previous;
 
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(720, 600);
   current = createVector(0,0);
   previous = createVector(0,0);
 };
 
 function draw() {
-  background(200);
+  background(184, 222, 164);
   
   // If it's time for a new point
   if (millis() > next && painting) {
@@ -38,7 +38,7 @@ function draw() {
     paths[paths.length - 1].add(current, force);
     
     // Schedule next circle
-    next = millis() + random(100);
+    next = millis() + random(25);
 
     // Store mouse values
     previous.x = current.x;

@@ -8,9 +8,9 @@ class Ball {
     constructor(x, y, r) {
       this.position = new p5.Vector(x, y);
       this.velocity = p5.Vector.random2D();
-      this.velocity.mult(3);
+      this.velocity.mult(15);
       this.r = r;
-      this.m = r * 0.1;
+      this.m = r * 2;
     }
     update() {
       this.position.add(this.velocity);
@@ -124,18 +124,18 @@ class Ball {
   
     display() {
       noStroke();
-      fill(204);
+      fill(240, 165, 195);
       ellipse(this.position.x, this.position.y, this.r * 2, this.r * 2);
     }
   }
-  let balls = [new Ball(100, 400, 20), new Ball(700, 400, 80)];
+  let balls = [new Ball(800, 400, 50), new Ball(400, 200, 100)];
   console.log(balls);
   function setup() {
-    createCanvas(710, 400);
+    createCanvas(900, 600);
   }
   
   function draw() {
-    background(150);
+    background(20,161,133);
     for (let i = 0; i < balls.length; i++) {
       let b = balls[i];
       b.update();
